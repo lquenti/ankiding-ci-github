@@ -1,0 +1,32 @@
+name: Create Ankiding
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build_works:
+    name: Build Works
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Update apt-get and install texlive-full
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y texlive-full
+      - name: Clone Ankiding
+        run: git clone https://github.com/lquenti/ankiding.git
+      - name: Compile Ankiding
+        run: |
+          cd ankiding
+          cargo build --release
+      - name: Run Ankiding
+        run: ankiding/target/release/ankiding --help
