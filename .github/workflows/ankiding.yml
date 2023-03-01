@@ -28,5 +28,12 @@ jobs:
         run: |
           cd ankiding
           cargo build --release
-      - name: Run Ankiding
-        run: ankiding/target/release/ankiding --help
+      - name: Run Ankiding and Create Artifact
+        run: |
+          cd ankiding
+          ./target/release/ankiding ../assets
+      - name: Archive Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ankiding_output
+          path: ./output.apkg
