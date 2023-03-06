@@ -21,7 +21,7 @@ jobs:
       - name: Update apt-get and install texlive-full
         run: |
           sudo apt-get update
-          # DEBIAN_FRONTEND=noninteractive sudo apt-get install -y texlive-full
+          DEBIAN_FRONTEND=noninteractive sudo apt-get install -y texlive-full
       - name: Clone Ankiding
         run: git clone https://github.com/lquenti/ankiding.git
       - name: Compile Ankiding
