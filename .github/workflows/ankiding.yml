@@ -30,7 +30,7 @@ jobs:
           cargo build --release
       - name: Run Ankiding and Create Artifact
         run: |
-          ./ankiding/target/release/ankiding ./assets
+          ./ankiding/target/release/ankiding ./Informatik
       - name: Archive Artifact
         uses: actions/upload-artifact@v2
         with:
