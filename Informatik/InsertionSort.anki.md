@@ -15,7 +15,10 @@ Insertion Sort ist ein simpler, stabiler in-place Sortieralgorithmus.
 
 Hier ein Beispiel wie es funktioniert.
 
-![Visualisierendes Bild](https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif)
+> Q: Wie sieht Insertion Sort visuell aus?
+> 
+> 
+> A: ![Visualisierendes Bild](https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif)
 
 > Q: Wie funktioniert Insertion Sort konzeptuell?
 > A:
